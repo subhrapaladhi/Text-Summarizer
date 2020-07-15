@@ -19,8 +19,12 @@
   },
   "homepage": "https://github.com/subhrapaladhi/Content-Summarizer#readme",
   "devDependencies": {
+    "@types/express": "^4.17.7",
     "@types/node": "^14.0.23",
     "nodemon": "^2.0.4",
     "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
