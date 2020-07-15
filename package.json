@@ -1,0 +1,26 @@
+{
+  "name": "content-summarizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon ./Build/app.js",
+    "start": "node ./Build/app.js",
+    "tsc": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subhrapaladhi/Content-Summarizer.git"
+  },
+  "author": "subhrapaladhi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subhrapaladhi/Content-Summarizer/issues"
+  },
+  "homepage": "https://github.com/subhrapaladhi/Content-Summarizer#readme",
+  "devDependencies": {
+    "@types/node": "^14.0.23",
+    "nodemon": "^2.0.4",
+    "typescript": "^3.9.6"
+  }
+}
