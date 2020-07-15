@@ -10,7 +10,7 @@ let err_file = fs.openSync("./logs/error.txt", "a");
 let content_file = fs.openSync("./Public/content.txt","w");
 let summary_file = fs.openSync("./Public/summary.txt","r");
 
-app.post("/getsummary", (req: express.Request,res: express.Response) => {
+app.post("/getsummary", async(req: express.Request,res: express.Response) => {
     // console.log(req.bo);
     let data = req.body.content;
     fs.writeSync(content_file,data);
@@ -19,14 +19,13 @@ app.post("/getsummary", (req: express.Request,res: express.Response) => {
         if(error){
             res.json({error: error});
         }
-        if(stderr){
+        else if(stderr){
             res.json({error: stderr});
         }
-        if(stdout){
+        else if(stdout){
             let summaryData = fs.readFileSync(summary_file);
             res.json({data: summaryData});
         }
-        res.json({data: "no data"});
     })
 })
 
