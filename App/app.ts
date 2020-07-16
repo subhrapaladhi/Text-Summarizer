@@ -1,7 +1,6 @@
 import express from "express";
 import fs from "fs";
-import childprocess from "child_process"
-import { Stream } from "stream";
+import childprocess from "child_process";
 
 const app:express.Application = express();
 app.use(express.json())
@@ -23,8 +22,10 @@ app.post("/getsummary", async(req: express.Request,res: express.Response) => {
             res.json({error: stderr});
         }
         else if(stdout){
-            let summaryData = fs.readFileSync(summary_file);
-            res.json({data: summaryData});
+            let summaryData: Buffer = fs.readFileSync(summary_file);
+            console.log(`summary data == ${summaryData}`);
+            let responseData = summaryData.toString();
+            res.json({data: responseData});
         }
     })
 })

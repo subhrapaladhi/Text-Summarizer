@@ -33,7 +33,9 @@ app.post("/getsummary", (req, res) => __awaiter(void 0, void 0, void 0, function
         }
         else if (stdout) {
             let summaryData = fs_1.default.readFileSync(summary_file);
-            res.json({ data: summaryData });
+            console.log(`summary data == ${summaryData}`);
+            let responseData = summaryData.toString();
+            res.json({ data: responseData });
         }
     });
 }));
