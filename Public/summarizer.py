@@ -79,6 +79,10 @@ def generate_summary(file_name, top_n=5):
       summarize_text.append(" ".join(ranked_sentence[i][1]))
 
     # Step 5 - Offcourse, output the summarize texr
+    summary = ". ".join(summarize_text)
+    summaryFile = open("./Public/summary.txt","w")
+    summaryFile.write(summary)
+    summaryFile.close()
     print("Summarize Text: \n", ". ".join(summarize_text))
 
 # let's begin
