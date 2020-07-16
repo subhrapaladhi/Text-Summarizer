@@ -5,14 +5,17 @@ import childprocess from "child_process";
 const app:express.Application = express();
 app.use(express.json())
 
-let content_file = fs.openSync("./Public/content.txt","w");
-let summary_file = fs.openSync("./Public/summary.txt","r");
-
 app.post("/getsummary", async(req: express.Request,res: express.Response) => {
+    childprocess.execSync("touch ./Public/content.txt");
+    childprocess.execSync("touch ./Public/summary.txt");
+
+    let content_file = fs.openSync("./Public/content.txt","w");
+    let summary_file = fs.openSync("./Public/summary.txt","r");
+
     let data = req.body.content;
     fs.writeSync(content_file,data);
     
-    childprocess.execFile("python3", ["./Public/summarizer.py"], (error,stdout,stderr) => {
+    childprocess.exec("python3 ./Public/summarizer.py", (error,stdout,stderr) => {
         if(error){
             console.log(`error == ${error}`);
             res.json({error: error});
@@ -23,9 +26,10 @@ app.post("/getsummary", async(req: express.Request,res: express.Response) => {
         }
         else if(stdout){
             let summaryData: Buffer = fs.readFileSync(summary_file);
-            console.log(`summary data == ${summaryData}`);
             let responseData = summaryData.toString();
             res.json({data: responseData});
+            childprocess.execSync("rm ./Public/content.txt");
+            childprocess.execSync("rm ./Public/summary.txt");
         }
     })
 })
