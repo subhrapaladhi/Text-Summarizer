@@ -24,21 +24,20 @@ div#main{
 }
 
 /* content area */
-div#content{
+div#text{
     width: 80%;
     margin: 2% 10%;
 }
 
-h2#contentLabel{
+h2#textLabel{
     width: 100%;
     margin-top: 0;
     text-align: center;  
     font-size: 250%;
 }
 
-textarea#contentText{
+textarea#textText{
     margin-top: 1%;
-    border-radius: 25px;
 }
 
 /* summary area */
@@ -56,5 +55,4 @@ h2#summaryLabel{
 
 textarea#summaryText{
     margin-top: 1%;
-    border-radius: 25px;
 }
