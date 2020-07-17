@@ -5,6 +5,7 @@ html,body{
     width: 100%;
     height: 100%;
     position: relative;
+    background: rgb(65, 63, 63);
 }
 
 /* heading */
@@ -14,6 +15,8 @@ h1{
     text-align: center;
     font-size: 350%;
     padding: 0.5%;
+    color: rgb(255, 255, 255);
+    background: rgb(75, 85, 75);
 }
 
 /* main body */
@@ -31,13 +34,26 @@ div#text{
 
 h2#textLabel{
     width: 100%;
-    margin-top: 0;
+    margin: 0;
     text-align: center;  
     font-size: 250%;
+    color: blanchedalmond;
 }
 
 textarea#textText{
-    margin-top: 1%;
+    display: block;
+    margin: 0 auto;
+    padding: 1%;
+}
+
+button#submitText{
+    background: rgb(99, 255, 229);
+    width: 25%;
+    padding: 1%;
+    display: block;
+    margin: 2% auto;
+    font-size: 150%;
+    border-radius: 10px;
 }
 
 /* summary area */
@@ -48,11 +64,14 @@ div#summary{
 
 h2#summaryLabel{
     width: 100%;
-    margin-top: 0;
+    color: blanchedalmond;
+    margin: 0;
     text-align: center;   
     font-size: 250%;
 }
 
 textarea#summaryText{
-    margin-top: 1%;
+    display: block;
+    margin: 0 auto;
+    padding: 1%;
 }

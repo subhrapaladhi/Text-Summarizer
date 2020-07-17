@@ -9,7 +9,6 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/basic", (req,res)=> {
-    console.log("here");
     res.send({data: "i am hrere"})
 })
 
