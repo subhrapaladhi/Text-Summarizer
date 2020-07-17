@@ -1,0 +1,17 @@
+{
+  "name": "text-sum-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.5.0",
+    "ajax": "0.0.4",
+    "jquery": "^3.5.1",
+    "typescript": "^3.9.6"
+  }
+}
