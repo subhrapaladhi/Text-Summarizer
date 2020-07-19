@@ -2,7 +2,7 @@
 const textInput = () => {
     const text = $("#textText").val();
     if (text != "") {
-        const url = `http://localhost:3000/getsummary`;
+        const url = `http://13.127.245.119/getsummary`;
         $.ajax({
             url: url,
             type: "POST",
